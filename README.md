@@ -21,5 +21,9 @@ Just use the same settings Helmet exposes for CSP.
 The above CSP will need to be polished over time
 https://ponyfoo.com/articles/content-security-policy-in-express-apps is a good write up that needs to be referred to and supported
 
+# Todo
+ - [ ] Provide a good CSP example for Etherpad
+ - [ ] Provide improves security for Etherpad (using nonce example etc for inline)
+
 # License
 Apache 2
