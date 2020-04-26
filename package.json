@@ -1,0 +1,20 @@
+{
+  "description": "Adds Security headers to Etherpad Express responses, including CSP(content security policy)",
+  "name": "ep_helmet",
+  "version": "0.0.1",
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk"
+  },
+  "dependencies": {
+    "helmet": "3.22.0"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "homepage": "https://github.com/johnmclear/ep_helmet",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/johnmclear/ep_helmet.git"
+  }
+}

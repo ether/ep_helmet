@@ -1,0 +1,10 @@
+{
+  "parts": [
+    {
+      "name": "ep_helmet",
+      "hooks":{
+        "expressConfigure" :  "ep_helmet/expressConfigure"
+      }
+    }
+  ]
+}
