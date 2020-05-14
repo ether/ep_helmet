@@ -1,4 +1,4 @@
-Etherpad plugin to bring in helmet.  Helmet provides security for express.  See the Helmet docs for it's capabilities.
+Etherpad plugin to bring in helmet.  Helmet provides security for express.  See the Helmet docs for it's capabilities.  Helmet also brings iFrame embed capabilities into Etherpad.
 
 # Usage
 Basic usage is simple, just install the plugin.
@@ -20,6 +20,17 @@ Just use the same settings Helmet exposes for CSP.
 ```
 The above CSP will need to be polished over time
 https://ponyfoo.com/articles/content-security-policy-in-express-apps is a good write up that needs to be referred to and supported
+
+## Frameguard
+Frameguard can be used to set X-Frame-Options which is useful if you embed Etherpad in an iFrame.
+```
+"ep_helmet":{
+  "frameguard":{
+    "action": "allow-from",
+    "domain": "https://DOMAINIFRAMEWILLBEHOSTEDIN.com"
+  }
+}
+```
 
 # Todo
  - [ ] Provide a good CSP example for Etherpad

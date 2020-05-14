@@ -9,8 +9,12 @@ app.use((req, res, next) => {
 */
 
 exports.expressConfigure = function(hookName, app){
-
   app.app.use(helmet());
+
+  if(settings.ep_helmet){
+    console.debug("Using config from Helmet. ", settings.ep_helmet);
+  }
+
   // Check settings are set..
   if(settings.ep_helmet && settings.ep_helmet.csp){
     const csp = require('helmet-csp')
@@ -35,8 +39,11 @@ exports.expressConfigure = function(hookName, app){
       settings.ep_helmet.csp.directives.scriptSrc = scriptSrc;
     }
     app.app.use(csp(settings.ep_helmet.csp))
-    console.debug("Using CSP from Helmet. ", settings.ep_helmet.csp);
   }
 
+  // Frameguard is useful for x-frame-origin
+  if(settings.ep_helmet && settings.ep_helmet.frameguard){
+    app.app.use(helmet.frameguard(settings.ep_helmet.frameguard));
+  }
+  
 }
-
