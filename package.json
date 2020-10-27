@@ -16,5 +16,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/johnmclear/ep_helmet.git"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "http://etherpad.org/"
   }
 }
