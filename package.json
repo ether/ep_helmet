@@ -7,10 +7,11 @@
     "email": "john@mclear.co.uk"
   },
   "dependencies": {
-    "helmet": "3.22.0"
+    "helmet": "3.22.0",
+    "helmet-csp": "3.3.1"
   },
   "engines": {
-    "node": "*"
+    "node": ">=10.17.0"
   },
   "homepage": "https://github.com/johnmclear/ep_helmet",
   "repository": {

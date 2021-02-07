@@ -1,14 +1,10 @@
-const helmet = require('helmet');
-const settings = require('../../src/node/utils/Settings');
-const crypto = require('crypto');
-/*
-app.use((req, res, next) => {
-  res.locals.nonce = uuid.v4()
-  next()
-})
-*/
+'use strict';
 
-exports.expressConfigure = function (hookName, app) {
+const helmet = require('helmet');
+const crypto = require('crypto');
+const settings = require('ep_etherpad-lite/node/utils/Settings');
+
+exports.expressConfigure = (hookName, app, cb) => {
   app.app.use(helmet());
 
   if (settings.ep_helmet) {
@@ -30,19 +26,24 @@ exports.expressConfigure = function (hookName, app) {
       'timesliderLicense',
       'timesliderBootstrap',
     ];
-    const scriptSrc = []; // array of each nonce
+    // array of each nonce
+    const scriptSrc = [];
     scriptSrc.push("'unsafe-eval'");
     scriptSrc.push("'self'");
     scriptSrc.push("'nonce-aceTemporaryNonce'");
     noncedPages.forEach((item) => {
-      const nonce = crypto.randomBytes(8).toString('base64'); // generate the nonce
-      scriptSrc.push(`\'nonce-${nonce}\'`); // push the nonces to the array
-      settings.nonce[item] = nonce; // apply the nonce to the setting object...
+      // generate the nonce
+      const nonce = crypto.randomBytes(8).toString('base64');
+      // push the nonces to the array
+      scriptSrc.push(`'nonce-${nonce}'`);
+      // apply the nonce to the setting object...
+      settings.nonce[item] = nonce;
     });
 
     if (settings.ep_helmet.csp.directives.scriptSrc) {
       settings.ep_helmet.csp.directives.scriptSrc = scriptSrc;
     }
+
     app.app.use(csp(settings.ep_helmet.csp));
   }
 
@@ -50,4 +51,6 @@ exports.expressConfigure = function (hookName, app) {
   if (settings.ep_helmet && settings.ep_helmet.frameguard) {
     app.app.use(helmet.frameguard(settings.ep_helmet.frameguard));
   }
+
+  cb();
 };
