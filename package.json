@@ -7,7 +7,7 @@
     "email": "john@mclear.co.uk"
   },
   "dependencies": {
-    "helmet": "3.22.0",
+    "helmet": "6.0.1",
     "helmet-csp": "3.4.0"
   },
   "engines": {
