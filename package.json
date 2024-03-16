@@ -1,7 +1,7 @@
 {
   "description": "Adds Security headers to Etherpad Express responses, including CSP(content security policy), and x-frame-origin, useful for if you embed Etherpad in an iFrame",
   "name": "ep_helmet",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "author": {
     "name": "John McLear",
     "email": "john@mclear.co.uk"
@@ -11,7 +11,7 @@
     "helmet-csp": "3.4.0"
   },
   "engines": {
-    "node": ">=12.17.0"
+    "node": ">=18.0.0"
   },
   "homepage": "https://github.com/johnmclear/ep_helmet",
   "repository": {
@@ -23,15 +23,12 @@
     "url": "https://etherpad.org/"
   },
   "devDependencies": {
-    "eslint": "^8.11.0",
-    "eslint-config-etherpad": "^3.0.9",
-    "typescript": "^4.6.2"
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
   },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
-  },
-  "peerDependencies": {
-    "ep_etherpad-lite": ">=1.8.6"
   }
 }
