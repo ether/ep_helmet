@@ -1,7 +1,7 @@
 {
   "description": "Adds Security headers to Etherpad Express responses, including CSP(content security policy), and x-frame-origin, useful for if you embed Etherpad in an iFrame",
   "name": "ep_helmet",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "author": {
     "name": "John McLear",
     "email": "john@mclear.co.uk"
