@@ -12,8 +12,8 @@ importers:
         specifier: 3.22.0
         version: 3.22.0
       helmet-csp:
-        specifier: 3.4.0
-        version: 3.4.0
+        specifier: 4.0.0
+        version: 4.0.0
     devDependencies:
       eslint:
         specifier: ^8.57.1
@@ -788,9 +788,9 @@ packages:
     resolution: {integrity: sha512-Rz953ZNEFk8sT2XvewXkYN0Ho4GEZdjAZy4stjiEQV3eN7GDxg1QKmYggH7otDyIA7uGA6XnUMVSgeJwbR5X+w==}
     engines: {node: '>=4.0.0'}
 
-  helmet-csp@3.4.0:
-    resolution: {integrity: sha512-a+YgzWw6dajqhQfb6ktxil0FsQuWTKzrLSUfy55dxS8fuvl1jidTIMPZ2udN15mjjcpBPgTHNHGF5tyWKYyR8w==}
-    engines: {node: '>=10.0.0'}
+  helmet-csp@4.0.0:
+    resolution: {integrity: sha512-fNQk70QffZk4lKP6sY545UUjFv7IjZ45qWB2zaDx2rtxXJHORI4hxYTMTE2Awn+EqDWdlllatafmN5Wk7E71hQ==}
+    engines: {node: '>=18.0.0'}
 
   helmet@3.22.0:
     resolution: {integrity: sha512-Xrqicn2nm1ZIUxP3YGuTBmbDL04neKsIT583Sjh0FkiwKDXYCMUqGqC88w3NUvVXtA75JyR2Jn6jw6ZEMOD+ZA==}
@@ -2255,7 +2255,7 @@ snapshots:
       content-security-policy-builder: 2.1.0
       dasherize: 2.0.0
 
-  helmet-csp@3.4.0: {}
+  helmet-csp@4.0.0: {}
 
   helmet@3.22.0:
     dependencies:
