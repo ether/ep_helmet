@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "helmet": "3.22.0",
-    "helmet-csp": "3.4.0"
+    "helmet-csp": "4.0.0"
   },
   "engines": {
     "node": ">=18.0.0"
