@@ -1,4 +1,4 @@
-![Publish Status](https://github.com/ether/ep_helmet/workflows/Node.js%20Package/badge.svg) ![Backend Tests Status](https://github.com/ether/ep_helmet/workflows/Backend%20tests/badge.svg)
+![Publish Status](https://github.com/ether/ep_helmet/workflows/Node.js%20Package/badge.svg) [![Backend Tests Status](https://github.com/ether/ep_helmet/actions/workflows/test-and-release.yml/badge.svg)](https://github.com/ether/ep_helmet/actions/workflows/test-and-release.yml)
 
 Etherpad plugin to bring in helmet.  Helmet provides security for express.  See the Helmet docs for it's capabilities.  Helmet also brings iFrame embed capabilities into Etherpad.
 
