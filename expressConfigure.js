@@ -5,7 +5,13 @@ const crypto = require('crypto');
 const settings = require('ep_etherpad-lite/node/utils/Settings');
 
 exports.expressConfigure = (hookName, app, cb) => {
-  app.app.use(helmet());
+  // Disable helmet's default Content-Security-Policy so the plugin
+  // doesn't accidentally lock down a working Etherpad install. The
+  // optional settings.ep_helmet.csp block below is the documented way
+  // for operators to opt in. With the default in place, strict
+  // 'script-src self' broke every page that relied on inline scripts
+  // or runtime eval (notably Playwright's waitForFunction in tests).
+  app.app.use(helmet({contentSecurityPolicy: false}));
 
   if (settings.ep_helmet) {
     console.debug('Using config from Helmet. ', settings.ep_helmet);
