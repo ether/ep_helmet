@@ -12,8 +12,8 @@ importers:
         specifier: 8.3.0
         version: 8.3.0
       helmet-csp:
-        specifier: 4.0.0
-        version: 4.0.0
+        specifier: 4.1.0
+        version: 4.1.0
     devDependencies:
       eslint:
         specifier: ^8.57.1
@@ -851,8 +851,8 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  helmet-csp@4.0.0:
-    resolution: {integrity: sha512-fNQk70QffZk4lKP6sY545UUjFv7IjZ45qWB2zaDx2rtxXJHORI4hxYTMTE2Awn+EqDWdlllatafmN5Wk7E71hQ==}
+  helmet-csp@4.1.0:
+    resolution: {integrity: sha512-31Qmv91fMV+M4qJjWsgAyOtVx/h39pmLgRRS6ntmGfiNgI7MhNxUPr6lcSv8M88gTrgA31gQU4ZGT5eVQngjtw==}
     engines: {node: '>=18.0.0'}
 
   helmet@8.3.0:
@@ -2324,7 +2324,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  helmet-csp@4.0.0: {}
+  helmet-csp@4.1.0: {}
 
   helmet@8.3.0: {}
 
