@@ -23,16 +23,31 @@ Just use the same settings Helmet exposes for CSP.
 The above CSP will need to be polished over time
 https://ponyfoo.com/articles/content-security-policy-in-express-apps is a good write up that needs to be referred to and supported
 
-## Frameguard
-Frameguard can be used to set X-Frame-Options which is useful if you embed Etherpad in an iFrame.
+## Frameguard (embedding in an iframe)
+By default helmet sends `X-Frame-Options: SAMEORIGIN`, so browsers only show a
+pad in an iframe when the embedding page is on the pad's own origin. Embedding
+from another origin or another site (for example a pad iframed into a wiki,
+an LMS or Nextcloud) is blocked until you change the `frameguard` setting.
+
+Allow embedding from any origin:
+```
+"ep_helmet":{
+  "frameguard": false
+}
+```
+
+To allow only some origins, turn frameguard off and restrict framing with a
+CSP `frameAncestors` directive in the `csp` block above instead, e.g.
+`"frameAncestors": ["'self'", "https://wiki.example.com"]`. X-Frame-Options
+can't list allowed origins; helmet 8 only accepts these values:
 ```
 "ep_helmet":{
   "frameguard":{
-    "action": "allow-from",
-    "domain": "https://DOMAINIFRAMEWILLBEHOSTEDIN.com"
+    "action": "deny"
   }
 }
 ```
+`"action"` is `"deny"` or `"sameorigin"`.
 
 # Todo
  - [ ] Provide a good CSP example for Etherpad

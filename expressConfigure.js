@@ -11,7 +11,15 @@ exports.expressConfigure = (hookName, app, cb) => {
   // for operators to opt in. With the default in place, strict
   // 'script-src self' broke every page that relied on inline scripts
   // or runtime eval (notably Playwright's waitForFunction in tests).
-  app.app.use(helmet({contentSecurityPolicy: false}));
+  //
+  // helmet's default X-Frame-Options: SAMEORIGIN stays on, so only pages on
+  // the pad's own origin can embed it. Set settings.ep_helmet.frameguard to
+  // false to allow embedding from other origins.
+  const frameguard = settings.ep_helmet && settings.ep_helmet.frameguard;
+  app.app.use(helmet({
+    contentSecurityPolicy: false,
+    ...(frameguard === false ? {xFrameOptions: false} : {}),
+  }));
 
   if (settings.ep_helmet) {
     console.debug('Using config from Helmet. ', settings.ep_helmet);
@@ -54,8 +62,8 @@ exports.expressConfigure = (hookName, app, cb) => {
   }
 
   // Frameguard is useful for x-frame-origin
-  if (settings.ep_helmet && settings.ep_helmet.frameguard) {
-    app.app.use(helmet.frameguard(settings.ep_helmet.frameguard));
+  if (frameguard) {
+    app.app.use(helmet.frameguard(frameguard));
   }
 
   cb();
