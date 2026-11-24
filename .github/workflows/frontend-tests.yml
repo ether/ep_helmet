@@ -112,7 +112,7 @@ jobs:
           # an honesty pass (the tagged embed tests must fail). See
           # doc/PLUGIN_FEATURE_DISABLES.md in core.
           if [ -n "${{ matrix.core_ref }}" ]; then
-            pnpm run test-ui --project=chromium plugin_packages/ --pass-with-no-tests
+            pnpm run test-ui --project=chromium plugin_packages/
           else
             ../bin/run-frontend-tests-with-disables.sh -- --project=chromium
           fi
