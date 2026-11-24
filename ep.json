@@ -1,4 +1,5 @@
 {
+  "disables": ["@feature:cross-origin-embed"],
   "parts": [
     {
       "name": "ep_helmet",
